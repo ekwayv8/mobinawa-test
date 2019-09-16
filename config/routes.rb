@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :admins do
     resources :companies
     resources :products
-    #get '/dashboard', to: 'admins#dashboard', as: 'dashboard'
   end
 
   resources :countries 
