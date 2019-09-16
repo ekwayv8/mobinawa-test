@@ -65,6 +65,11 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+    # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.default_url_options = { host: 'https://mobinawa.herokuapp.com/', port: 3000 }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
