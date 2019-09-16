@@ -3,17 +3,16 @@ Rails.application.routes.draw do
   root to: 'sectors#index'
 
   resources :admins do
-  	resources :compagnies do
-  		resources :products
-  	end
+    resources :companies
+    resources :products
+    get '/dashboard', to: 'admins#dashboard', as: 'dashboard'
   end
 
-  resources :sectors do
-  	resources :sub_sectors do
-  	  resources :compagnies do
-  	 	resources :products
-  	  end
-  	end
-  end
+  resources :countries 
+  resources :sectors 
+  resources :sub_sectors 
+  resources :companies
+  resources :products
+  	  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
