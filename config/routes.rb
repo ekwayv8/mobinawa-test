@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
-  root to: 'sectors#index'
+  root 'sectors#index'
 
   resources :admins do
     resources :companies
